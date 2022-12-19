@@ -1,7 +1,14 @@
 import { Button, Input } from '@mantine/core';
 import type { NextPage } from 'next';
+import { useEffect } from 'react';
 
 const Home: NextPage = () => {
+  useEffect(()=>{
+    fetch('/api/books')
+      .then((res)=>res.json())
+      .then(console.log)
+  },[]);
+
   return (
     <div>
       <h1>Book nob</h1>
